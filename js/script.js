@@ -22,7 +22,7 @@ $(document).ready( function() {
 
 				choiceTimeout = window.setInterval(function() {
 					
-					if (choiceTimeoutCount < 0) {
+					if (choiceTimeoutCount <= 0) {
 						
 						window.clearInterval(choiceTimeout);
 						$("#choiceOverlayCounter").hide();
@@ -32,8 +32,8 @@ $(document).ready( function() {
 
 					} else {
 						
-						$("#choiceOverlayCounter").text(choiceTimeoutCount);
 						choiceTimeoutCount--;
+						$("#choiceOverlayCounter").text(choiceTimeoutCount);
 
 					}
 
@@ -87,7 +87,7 @@ $(document).ready( function() {
 
 		choiceTimeout = window.setInterval(function() {
 			
-			if (choiceTimeoutCount < 0) {
+			if (choiceTimeoutCount <= 0) {
 				
 				window.clearInterval(choiceTimeout);
 				$("#choiceOverlayCounter").hide();
@@ -101,8 +101,8 @@ $(document).ready( function() {
 
 			} else {
 				
-				$("#choiceOverlayCounter").text(choiceTimeoutCount);
 				choiceTimeoutCount--;
+				$("#choiceOverlayCounter").text(choiceTimeoutCount);
 
 			}
 
@@ -213,7 +213,7 @@ $(document).ready( function() {
 
 		choiceTimeout = window.setInterval(function() {
 			
-			if (choiceTimeoutCount < 0) {
+			if (choiceTimeoutCount <= 0) {
 				
 				window.clearInterval(choiceTimeout);
 				$("#choiceOverlayCounter").hide();
@@ -227,8 +227,8 @@ $(document).ready( function() {
 
 			} else {
 				
-				$("#choiceOverlayCounter").text(choiceTimeoutCount);
 				choiceTimeoutCount--;
+				$("#choiceOverlayCounter").text(choiceTimeoutCount);
 
 			}
 
