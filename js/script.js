@@ -3,7 +3,7 @@ var lastChoiceOverlay;
 var choiceTimeout;
 var choiceTimeoutCount;
 
-var choiceTimeoutDuration = 4; // Duration in seconds
+var choiceTimeoutDuration = 5; // Duration in seconds
 
 $(document).ready( function() {
 
