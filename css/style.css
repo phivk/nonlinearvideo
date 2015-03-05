@@ -79,83 +79,83 @@ body {
 ***************************************/
 
 /* Decision Overlay 1 */
-.choiceOverlay#choice1 .action1 {
+.choiceOverlay#choiceOverlay1 .action1 {
 	margin: 50px;
 	padding: 10px 20px;
 	color: #fff;
 	background: #779977;
 }
 
-.choiceOverlay#choice1 .action1:hover {
+.choiceOverlay#choiceOverlay1 .action1:hover {
 	background: #444;
 	cursor: pointer;
 }
 
-.choiceOverlay#choice1 .action2 {
+.choiceOverlay#choiceOverlay1 .action2 {
 	margin: 50px;
 	padding: 10px 20px;
 	color: #fff;
 	background: #777799;
 }
 
-.choiceOverlay#choice1 .action2:hover {
+.choiceOverlay#choiceOverlay1 .action2:hover {
 	background: #444;
 	cursor: pointer;
 }
 
 /* Decision Overlay 2 (with background image) */
 
-.choiceOverlay#choice2 {
+.choiceOverlay#choiceOverlay2 {
 	background-image: url("../images/placeholder.png");
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 }
 
-.choiceOverlay#choice2 .action1 {
+.choiceOverlay#choiceOverlay2 .action1 {
 	margin: 50px;
 	padding: 10px 20px;
 	color: #fff;
 	background: #997777;
 }
 
-.choiceOverlay#choice2 .action1:hover {
+.choiceOverlay#choiceOverlay2 .action1:hover {
 	background: #444;
 	cursor: pointer;
 }
 
-.choiceOverlay#choice2 .action2 {
+.choiceOverlay#choiceOverlay2 .action2 {
 	margin: 50px;
 	padding: 10px 20px;
 	color: #fff;
 	background: #777799;
 }
 
-.choiceOverlay#choice2 .action2:hover {
+.choiceOverlay#choiceOverlay2 .action2:hover {
 	background: #444;
 	cursor: pointer;
 }
 
 /* Decision Overlay 3 */
-.choiceOverlay#choice3 .action1 {
+.choiceOverlay#choiceOverlay3 .action1 {
 	margin: 50px;
 	padding: 10px 20px;
 	color: #fff;
 	background: #997777;
 }
 
-.choiceOverlay#choice3 .action1:hover {
+.choiceOverlay#choiceOverlay3 .action1:hover {
 	background: #444;
 	cursor: pointer;
 }
 
-.choiceOverlay#choice3 .action2 {
+.choiceOverlay#choiceOverlay3 .action2 {
 	margin: 50px;
 	padding: 10px 20px;
 	color: #fff;
 	background: #779977;
 }
 
-.choiceOverlay#choice3 .action2:hover {
+.choiceOverlay#choiceOverlay3 .action2:hover {
 	background: #444;
 	cursor: pointer;
 }

@@ -85,7 +85,7 @@ $(document).ready( function() {
 		
 		video1.pause();
 
-		$(".choiceOverlay#choice1").show();
+		$(".choiceOverlay#choiceOverlay1").show();
 		
 		// After a certain timespan, go back to the video
 		// (duration is defined in choiceTimeoutDuration)
@@ -98,10 +98,10 @@ $(document).ready( function() {
 				
 				window.clearInterval(choiceTimeout);
 				$("#choiceOverlayCounter").hide();
-				$(".choiceOverlay#choice1").hide();
+				$(".choiceOverlay#choiceOverlay1").hide();
 
 				// save last overlay & video to resume at video end
-				lastChoiceOverlay = $(".choiceOverlay#choice1");
+				lastChoiceOverlay = $(".choiceOverlay#choiceOverlay1");
 				lastVideo = $("#video1");
 				
 				video1.play();
@@ -118,8 +118,8 @@ $(document).ready( function() {
 	});
 
 	// What should happen when a choice is made?
-	// ( #choice1 and .action1 refer to the respective IDs and classes in index.html )
-	$(".choiceOverlay#choice1 .action1").click(function() {
+	// ( #choiceOverlay1 and .action1 refer to the respective IDs and classes in index.html )
+	$(".choiceOverlay#choiceOverlay1 .action1").click(function() {
 		
 		// stop timeout, as something was chosen
 		window.clearInterval(choiceTimeout);
@@ -130,7 +130,7 @@ $(document).ready( function() {
 		$("video").hide();
 
 		// save last overlay & video to resume at video end
-		lastChoiceOverlay = $(".choiceOverlay#choice1");
+		lastChoiceOverlay = $(".choiceOverlay#choiceOverlay1");
 		lastVideo = $("#video1");
 
 		// show and play video 2 at a certain position (0 seconds)
@@ -140,7 +140,7 @@ $(document).ready( function() {
 	});
 
 	// Example for different choice
-	$(".choiceOverlay#choice1 .action2").click(function() {
+	$(".choiceOverlay#choiceOverlay1 .action2").click(function() {
 		
 		// stop timeout, as something was chosen
 		window.clearInterval(choiceTimeout);
@@ -151,7 +151,7 @@ $(document).ready( function() {
 		$("video").hide();
 
 		// save last overlay & video to resume at video end
-		lastChoiceOverlay = $(".choiceOverlay#choice1");
+		lastChoiceOverlay = $(".choiceOverlay#choiceOverlay1");
 		lastVideo = $("#video1");
 
 		// show and play video 3 at a certain position (0 seconds)
@@ -211,7 +211,7 @@ $(document).ready( function() {
 		
 		video2.pause();
 
-		$(".choiceOverlay#choice2").show();
+		$(".choiceOverlay#choiceOverlay2").show();
 		
 		// After a certain timespan, go back to the video
 		// (duration is defined in choiceTimeoutDuration)
@@ -224,10 +224,10 @@ $(document).ready( function() {
 				
 				window.clearInterval(choiceTimeout);
 				$("#choiceOverlayCounter").hide();
-				$(".choiceOverlay#choice1").hide();
+				$(".choiceOverlay#choiceOverlay1").hide();
 
 				// save last overlay & video to resume at video end
-				lastChoiceOverlay = $(".choiceOverlay#choice2");
+				lastChoiceOverlay = $(".choiceOverlay#choiceOverlay2");
 				lastVideo = $("#video2");
 				
 				video2.play();
@@ -244,8 +244,8 @@ $(document).ready( function() {
 	});
 
 	// What should happen when a choice is made?
-	// ( #choice1 and .action1 refer to the respective IDs and classes in index.html )
-	$(".choiceOverlay#choice2 .action1").click(function() {
+	// ( #choiceOverlay1 and .action1 refer to the respective IDs and classes in index.html )
+	$(".choiceOverlay#choiceOverlay2 .action1").click(function() {
 		
 		// stop timeout, as something was chosen
 		window.clearInterval(choiceTimeout);
@@ -256,7 +256,7 @@ $(document).ready( function() {
 		$("video").hide();
 
 		// save last overlay & video to resume at video end
-		lastChoiceOverlay = $(".choiceOverlay#choice2");
+		lastChoiceOverlay = $(".choiceOverlay#choiceOverlay2");
 		lastVideo = $("#video2");
 
 		// show and play video 1 at a certain position (0 seconds)
@@ -266,7 +266,7 @@ $(document).ready( function() {
 	});
 
 	// Example for different choice
-	$(".choiceOverlay#choice2 .action2").click(function() {
+	$(".choiceOverlay#choiceOverlay2 .action2").click(function() {
 		
 		// stop timeout, as something was chosen
 		window.clearInterval(choiceTimeout);
@@ -277,7 +277,7 @@ $(document).ready( function() {
 		$("video").hide();
 
 		// save last overlay & video to resume at video end
-		lastChoiceOverlay = $(".choiceOverlay#choice2");
+		lastChoiceOverlay = $(".choiceOverlay#choiceOverlay2");
 		lastVideo = $("#video2");
 
 		// show and play video 3 at a certain position (0 seconds)
@@ -301,13 +301,13 @@ $(document).ready( function() {
 		
 		video3.pause();
 
-		$(".choiceOverlay#choice3").show();
+		$(".choiceOverlay#choiceOverlay3").show();
 
 	});
 
 	// What should happen when a choice is made?
-	// ( #choice1 and .action1 refer to the respective IDs and classes in index.html )
-	$(".choiceOverlay#choice3 .action1").click(function() {
+	// ( #choiceOverlay1 and .action1 refer to the respective IDs and classes in index.html )
+	$(".choiceOverlay#choiceOverlay3 .action1").click(function() {
 		
 		// stop timeout, as something was chosen
 		window.clearInterval(choiceTimeout);
@@ -318,7 +318,7 @@ $(document).ready( function() {
 		$("video").hide();
 
 		// save last overlay & video to resume at video end
-		lastChoiceOverlay = $(".choiceOverlay#choice3");
+		lastChoiceOverlay = $(".choiceOverlay#choiceOverlay3");
 		lastVideo = $("#video3");
 
 		// show and play video 1 at a certain position (0 seconds)
@@ -328,7 +328,7 @@ $(document).ready( function() {
 	});
 
 	// Example for different choice
-	$(".choiceOverlay#choice3 .action2").click(function() {
+	$(".choiceOverlay#choiceOverlay3 .action2").click(function() {
 		
 		// stop timeout, as something was chosen
 		window.clearInterval(choiceTimeout);
@@ -339,7 +339,7 @@ $(document).ready( function() {
 		$("video").hide();
 
 		// save last overlay & video to resume at video end
-		lastChoiceOverlay = $(".choiceOverlay#choice3");
+		lastChoiceOverlay = $(".choiceOverlay#choiceOverlay3");
 		lastVideo = $("#video3");
 
 		// show and play video 2 at a certain position (0 seconds)
