@@ -7,6 +7,24 @@ var choiceTimeoutDuration = 5; // Duration in seconds
 
 $(document).ready( function() {
 
+	// INITIALIZE VIDEOS
+	// (every additional video has to be referenced here with a unique ID,
+	// based on the ID of the respective video element in index.html)
+
+	var video1 = Popcorn('#video1');
+	var video2 = Popcorn('#video2');
+	var video3 = Popcorn('#video3');
+
+	// show startvideo
+	$("#video1").show();
+
+	function showOverlay (id) {
+		
+		
+	}
+
+
+
 	// at the end of each video, resume to the last decision overlay
 	$("video").each( function() {
 		$(this).get(0).addEventListener("ended", function(e) {
@@ -49,16 +67,7 @@ $(document).ready( function() {
 
 	});
 
-	// INITIALIZE VIDEOS
-	// (every additional video has to be referenced here with a unique ID,
-	// based on the ID of the respective video element in index.html)
-
-	var video1 = Popcorn('#video1');
-	var video2 = Popcorn('#video2');
-	var video3 = Popcorn('#video3');
-
-	// show startvideo
-	$("#video1").show();
+	
 
 
 
