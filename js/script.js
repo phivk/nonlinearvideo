@@ -41,12 +41,10 @@ $(document).ready( function() {
 			}
 		});
 
+		// cover video with overlay once a video starts playing, 
+		// so it can be clicked to play initially
 		$(this).get(0).addEventListener("play", function(e) {
 			$("#overlayWrapper").show();
-		});
-
-		$(this).get(0).addEventListener("pause", function(e) {
-			$("#overlayWrapper").hide();
 		});
 
 	});
