@@ -1,0 +1,177 @@
+/***************************************
+* GENERIC DEFINITIONS
+***************************************/
+
+body {
+	font-family: Verdana, non-serif;
+}
+
+#content {
+	width: 800px;
+	height: 600px;
+	background: #efefef;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -400px;
+	margin-top: -300px;
+}
+
+#content #mainVideoWrapper {
+	width: 100%;
+	height: 100%;
+	background: #222;
+}
+
+#content #mainVideoWrapper video {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+
+#content #overlayWrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 570px;
+	display: none;
+}
+
+#content .choiceOverlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(50,50,50,.9);
+	display: none;
+	z-index: 10;
+}
+
+#content #choiceOverlayCounter {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	padding: 6px 8px;
+	z-index: 11;
+	width: 20px;
+	height: 20px;
+	font-size: 16px;
+	text-align: center;
+	color: #fff;
+	background: rgba(100,100,100,.5);
+	display: none;
+}
+
+#content .otherOverlay {
+	position: absolute;
+}
+
+#content .otherOverlay iframe {
+	border: none;
+	background: #fff;
+}
+
+/***************************************
+* CUSTOM OVERLAYS, WEBSITES, ETC.
+***************************************/
+
+/* Decision Overlay 1 */
+.choiceOverlay#choice1 .action1 {
+	margin: 50px;
+	padding: 10px 20px;
+	color: #fff;
+	background: #779977;
+}
+
+.choiceOverlay#choice1 .action1:hover {
+	background: #444;
+	cursor: pointer;
+}
+
+.choiceOverlay#choice1 .action2 {
+	margin: 50px;
+	padding: 10px 20px;
+	color: #fff;
+	background: #777799;
+}
+
+.choiceOverlay#choice1 .action2:hover {
+	background: #444;
+	cursor: pointer;
+}
+
+/* Decision Overlay 2 (with background image) */
+
+.choiceOverlay#choice2 {
+	background-image: url("../images/placeholder.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.choiceOverlay#choice2 .action1 {
+	margin: 50px;
+	padding: 10px 20px;
+	color: #fff;
+	background: #997777;
+}
+
+.choiceOverlay#choice2 .action1:hover {
+	background: #444;
+	cursor: pointer;
+}
+
+.choiceOverlay#choice2 .action2 {
+	margin: 50px;
+	padding: 10px 20px;
+	color: #fff;
+	background: #777799;
+}
+
+.choiceOverlay#choice2 .action2:hover {
+	background: #444;
+	cursor: pointer;
+}
+
+/* Decision Overlay 3 */
+.choiceOverlay#choice3 .action1 {
+	margin: 50px;
+	padding: 10px 20px;
+	color: #fff;
+	background: #997777;
+}
+
+.choiceOverlay#choice3 .action1:hover {
+	background: #444;
+	cursor: pointer;
+}
+
+.choiceOverlay#choice3 .action2 {
+	margin: 50px;
+	padding: 10px 20px;
+	color: #fff;
+	background: #779977;
+}
+
+.choiceOverlay#choice3 .action2:hover {
+	background: #444;
+	cursor: pointer;
+}
+
+/* Website Overlay Positions */
+
+#exampleWebsite1 {
+	top: 5%;
+	left: 10%;
+	width: 40%;
+	height: 60%;
+}
+
+#exampleWebsite2 {
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	height: 100%;
+}

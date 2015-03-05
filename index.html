@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>HTML5 Non-linear Video Template</title>
+		
+		<link rel="stylesheet" href="./css/style.css">
+		
+	</head>
+	<body>
+		<a href="http://filmicweb.org/hypervideo-web/create-non-linear-video-html5/">< Back to "How to create non-linear video in HTML5"</a>
+
+		<div id="content">
+
+			<div id="mainVideoWrapper">
+
+				<!-- Startvideo -->
+				<video id="video1" controls="controls">
+					<source src="videos/startvideo.webm" type="video/webm">
+					<source src="videos/startvideo.mp4" type="video/mp4">
+				</video>
+				
+				<!-- Alternative Videos -->
+				<video id="video2" controls="controls">
+					<source src="videos/video-2.webm" type="video/webm">
+					<source src="videos/video-2.mp4" type="video/mp4">
+				</video>
+
+				<video id="video3" controls="controls">
+					<source src="videos/video-3.webm" type="video/webm">
+					<source src="videos/video-3.mp4" type="video/mp4">
+				</video>
+				
+			</div>
+
+
+			<!-- Decision-Overlays, that lay on top of the videos and are shown at certain points of time. -->
+			<div class="choiceOverlay" id="choice1">
+				<div class="action1">Play Video 2 (Green)</div>
+				<div class="action2">Play Video 3 (Blue)</div>
+			</div>
+
+			<div class="choiceOverlay" id="choice2">
+				<div class="action1">Play Video 1 (Red)</div>
+				<div class="action2">Play Video 3 (Blue)</div>
+			</div>
+
+			<div class="choiceOverlay" id="choice3">
+				<div class="action1">Play Video 1 (Red)</div>
+				<div class="action2">Play Video 2 (Green)</div>
+			</div>
+
+
+			<div id="overlayWrapper">
+				<!-- Container for other overlays (ie. websites), that are shown at a certain point of time.
+				The point of time is defined in /js/script.js refers to the id of the element (z.B. "#exampleWebsite1"). Position and size are defined in /css/style.css -->
+				<div class="otherOverlay" id="exampleWebsite1"></div>
+				<div class="otherOverlay" id="exampleWebsite2"></div>
+
+			</div>
+
+
+			<!-- Counter for Decision-Overlays -->
+			<div id="choiceOverlayCounter">4</div>
+
+		</div>
+        
+	</body>
+	
+	<script type="text/javascript" src="js/popcorn-complete-min.js"></script>
+	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+
+	<!-- Script, that coordinates timebased events -->
+	<script type="text/javascript" src="js/script.js"></script>
+		
+</html>
