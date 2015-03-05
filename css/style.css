@@ -17,6 +17,10 @@ body {
 	margin-top: -300px;
 }
 
+#content h1 {
+	text-align: center;
+}
+
 #content #mainVideoWrapper {
 	width: 100%;
 	height: 100%;
