@@ -78,34 +78,32 @@ body {
 	background: #fff;
 }
 
-/***************************************
-* CUSTOM OVERLAYS, WEBSITES, ETC.
-***************************************/
-
-/* Decision Overlay 1 */
-.choiceOverlay#choiceOverlay1 .action1 {
+.choiceOverlay .action {
 	margin: 50px;
 	padding: 10px 20px;
 	color: #fff;
-	background: #779977;
 }
 
-.choiceOverlay#choiceOverlay1 .action1:hover {
+.choiceOverlay .action:hover {
 	background: #444;
 	cursor: pointer;
 }
 
-.choiceOverlay#choiceOverlay1 .action2 {
-	margin: 50px;
-	padding: 10px 20px;
-	color: #fff;
+.blue {
 	background: #777799;
 }
 
-.choiceOverlay#choiceOverlay1 .action2:hover {
-	background: #444;
-	cursor: pointer;
+.green {
+	background: #779977;
 }
+
+.red {
+	background: #997777;
+}
+
+/***************************************
+* CUSTOM OVERLAYS, WEBSITES, ETC.
+***************************************/
 
 /* Decision Overlay 2 (with background image) */
 
@@ -113,55 +111,6 @@ body {
 	background-image: url("../images/placeholder.png");
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
-}
-
-.choiceOverlay#choiceOverlay2 .action1 {
-	margin: 50px;
-	padding: 10px 20px;
-	color: #fff;
-	background: #997777;
-}
-
-.choiceOverlay#choiceOverlay2 .action1:hover {
-	background: #444;
-	cursor: pointer;
-}
-
-.choiceOverlay#choiceOverlay2 .action2 {
-	margin: 50px;
-	padding: 10px 20px;
-	color: #fff;
-	background: #777799;
-}
-
-.choiceOverlay#choiceOverlay2 .action2:hover {
-	background: #444;
-	cursor: pointer;
-}
-
-/* Decision Overlay 3 */
-.choiceOverlay#choiceOverlay3 .action1 {
-	margin: 50px;
-	padding: 10px 20px;
-	color: #fff;
-	background: #997777;
-}
-
-.choiceOverlay#choiceOverlay3 .action1:hover {
-	background: #444;
-	cursor: pointer;
-}
-
-.choiceOverlay#choiceOverlay3 .action2 {
-	margin: 50px;
-	padding: 10px 20px;
-	color: #fff;
-	background: #779977;
-}
-
-.choiceOverlay#choiceOverlay3 .action2:hover {
-	background: #444;
-	cursor: pointer;
 }
 
 /* Website Overlay Positions */

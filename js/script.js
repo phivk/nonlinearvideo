@@ -1,9 +1,8 @@
-var lastVideo;
-var lastChoiceOverlay;
+var lastOverlayNumber;
 var choiceTimeout;
 var choiceTimeoutCount;
 
-var choiceTimeoutDuration = 5; // Duration in seconds
+var choiceTimeoutDuration = 2; // Duration in seconds
 
 $(document).ready( function() {
 
@@ -14,48 +13,18 @@ $(document).ready( function() {
 	var video1 = Popcorn('#video1');
 	var video2 = Popcorn('#video2');
 	var video3 = Popcorn('#video3');
+	var videos = [video1, video2, video3];
 
 	// show startvideo
 	$("#video1").show();
 
-	function showOverlay (id) {
-		
-		
-	}
-
-
-
 	// at the end of each video, resume to the last decision overlay
 	$("video").each( function() {
 		$(this).get(0).addEventListener("ended", function(e) {
-			if (lastChoiceOverlay) {
-				$("video").hide();
-				lastVideo.show();
-				lastChoiceOverlay.show();
-		
-				// After a certain timespan, go back to the video
-				// (duration is defined in choiceTimeoutDuration)
-				choiceTimeoutCount = choiceTimeoutDuration;
-				$("#choiceOverlayCounter").text(choiceTimeoutCount).show();
-
-				choiceTimeout = window.setInterval(function() {
-					
-					if (choiceTimeoutCount <= 0) {
-						
-						window.clearInterval(choiceTimeout);
-						$("#choiceOverlayCounter").hide();
-						lastChoiceOverlay.hide();
-
-						lastVideo.get(0).play();
-
-					} else {
-						
-						choiceTimeoutCount--;
-						$("#choiceOverlayCounter").text(choiceTimeoutCount);
-
-					}
-
-				}, 1000);
+			if (lastOverlayNumber) {
+				showOverlay(lastOverlayNumber);
+			} else {
+				showOverlay(1);
 			}
 		});
 
@@ -64,11 +33,78 @@ $(document).ready( function() {
 		$(this).get(0).addEventListener("play", function(e) {
 			$("#overlayWrapper").show();
 		});
-
 	});
 
-	
+	function showOverlay (n) {
+		var $overlay = $(".choiceOverlay:eq("+(n-1)+")");
+		var $video = $("#video"+(n));
+		var $counter = $("#choiceOverlayCounter");
 
+		$overlay.show();
+
+		// What should happen when a choice is made?
+		var prevVid = n - 1;
+		var nextVid = n + 1;
+		if (prevVid < 1) {prevVid = videos.length};
+		if (nextVid > videos.length) {nextVid = 1};
+
+		// clear counter and overlay
+		$overlay.children(".action").click(function () {
+			// stop timeout, as something was chosen
+			window.clearInterval(choiceTimeout);
+			
+			// hide counter, overlays & videos
+			$counter.hide();
+			$(".choiceOverlay").hide();
+			$("video").hide();
+
+			// save last overlay & video to resume at video end
+			lastChoiceOverlay = $overlay;
+			lastOverlayNumber = n;
+		});
+		// startVideo for actions
+		$overlay.children(".red").click(function () {
+			startVideo(1);
+		});
+		$overlay.children(".green").click(function () {
+			startVideo(2);
+		});
+		$overlay.children(".blue").click(function () {
+			startVideo(3);
+		});
+
+		
+		// After a certain timespan, go back to the video
+		// (duration is defined in choiceTimeoutDuration)
+		choiceTimeoutCount = choiceTimeoutDuration;
+		$counter.text(choiceTimeoutCount).show();
+
+		choiceTimeout = window.setInterval(function() {
+			
+			if (choiceTimeoutCount <= 0) {
+				
+				window.clearInterval(choiceTimeout);
+				$counter.hide();
+				$overlay.hide();
+
+				// save last overlay & video to resume at video end
+				lastChoiceOverlay = $overlay;
+				lastOverlayNumber = n;
+				
+				videos[n-1].play();
+
+			} else {
+				choiceTimeoutCount--;
+				$counter.text(choiceTimeoutCount);
+			}
+		}, 1000); // execute every 1 seconds
+	}
+
+	function startVideo (videoNumber) {
+		// show and play video videoNumber at a certain position (0 seconds)
+		$("#video"+videoNumber).show();
+		videos[videoNumber-1].play(0);
+	}
 
 
 	/*************************************************************************
@@ -85,79 +121,8 @@ $(document).ready( function() {
 		
 		video1.pause();
 
-		$(".choiceOverlay#choiceOverlay1").show();
-		
-		// After a certain timespan, go back to the video
-		// (duration is defined in choiceTimeoutDuration)
-		choiceTimeoutCount = choiceTimeoutDuration;
-		$("#choiceOverlayCounter").text(choiceTimeoutCount).show();
-
-		choiceTimeout = window.setInterval(function() {
-			
-			if (choiceTimeoutCount <= 0) {
-				
-				window.clearInterval(choiceTimeout);
-				$("#choiceOverlayCounter").hide();
-				$(".choiceOverlay#choiceOverlay1").hide();
-
-				// save last overlay & video to resume at video end
-				lastChoiceOverlay = $(".choiceOverlay#choiceOverlay1");
-				lastVideo = $("#video1");
-				
-				video1.play();
-
-			} else {
-				
-				choiceTimeoutCount--;
-				$("#choiceOverlayCounter").text(choiceTimeoutCount);
-
-			}
-
-		}, 1000); // execute every 1 seconds
-
-	});
-
-	// What should happen when a choice is made?
-	// ( #choiceOverlay1 and .action1 refer to the respective IDs and classes in index.html )
-	$(".choiceOverlay#choiceOverlay1 .action1").click(function() {
-		
-		// stop timeout, as something was chosen
-		window.clearInterval(choiceTimeout);
-		
-		// hide counter, overlays & videos
-		$("#choiceOverlayCounter").hide();
-		$(".choiceOverlay").hide();
-		$("video").hide();
-
-		// save last overlay & video to resume at video end
-		lastChoiceOverlay = $(".choiceOverlay#choiceOverlay1");
-		lastVideo = $("#video1");
-
-		// show and play video 2 at a certain position (0 seconds)
-		$("#video2").show();
-		video2.play(0);
-
-	});
-
-	// Example for different choice
-	$(".choiceOverlay#choiceOverlay1 .action2").click(function() {
-		
-		// stop timeout, as something was chosen
-		window.clearInterval(choiceTimeout);
-		
-		// hide counter, overlays & videos
-		$("#choiceOverlayCounter").hide();
-		$(".choiceOverlay").hide();
-		$("video").hide();
-
-		// save last overlay & video to resume at video end
-		lastChoiceOverlay = $(".choiceOverlay#choiceOverlay1");
-		lastVideo = $("#video1");
-
-		// show and play video 3 at a certain position (0 seconds)
-		$("#video3").show();
-		video3.play(0);
-
+		// show overlay 1
+		showOverlay(1);
 	});
 
 	/***************************************
@@ -178,8 +143,6 @@ $(document).ready( function() {
 	});
 
 
-
-
 	/*************************************************************************
 	* (TIMEBASED) EVENTS FOR VIDEO 2
 	*************************************************************************/
@@ -195,7 +158,7 @@ $(document).ready( function() {
 	// in our case a DIV, that is position:absolute on top of the video (see style.css)
 	video2.webpage({
 		id: "test1",
-		start: 4,
+		start: 6,
 		end: 8,
 		src: "http://example.com",
 		target: "exampleWebsite2"
@@ -211,79 +174,8 @@ $(document).ready( function() {
 		
 		video2.pause();
 
-		$(".choiceOverlay#choiceOverlay2").show();
-		
-		// After a certain timespan, go back to the video
-		// (duration is defined in choiceTimeoutDuration)
-		choiceTimeoutCount = choiceTimeoutDuration;
-		$("#choiceOverlayCounter").text(choiceTimeoutCount).show();
-
-		choiceTimeout = window.setInterval(function() {
-			
-			if (choiceTimeoutCount <= 0) {
-				
-				window.clearInterval(choiceTimeout);
-				$("#choiceOverlayCounter").hide();
-				$(".choiceOverlay#choiceOverlay1").hide();
-
-				// save last overlay & video to resume at video end
-				lastChoiceOverlay = $(".choiceOverlay#choiceOverlay2");
-				lastVideo = $("#video2");
-				
-				video2.play();
-
-			} else {
-				
-				choiceTimeoutCount--;
-				$("#choiceOverlayCounter").text(choiceTimeoutCount);
-
-			}
-
-		}, 1000); // execute every 1 seconds
-
-	});
-
-	// What should happen when a choice is made?
-	// ( #choiceOverlay1 and .action1 refer to the respective IDs and classes in index.html )
-	$(".choiceOverlay#choiceOverlay2 .action1").click(function() {
-		
-		// stop timeout, as something was chosen
-		window.clearInterval(choiceTimeout);
-		
-		// hide counter, overlays & videos
-		$("#choiceOverlayCounter").hide();
-		$(".choiceOverlay").hide();
-		$("video").hide();
-
-		// save last overlay & video to resume at video end
-		lastChoiceOverlay = $(".choiceOverlay#choiceOverlay2");
-		lastVideo = $("#video2");
-
-		// show and play video 1 at a certain position (0 seconds)
-		$("#video1").show();
-		video1.play(0);
-
-	});
-
-	// Example for different choice
-	$(".choiceOverlay#choiceOverlay2 .action2").click(function() {
-		
-		// stop timeout, as something was chosen
-		window.clearInterval(choiceTimeout);
-		
-		// hide counter, overlays & videos
-		$("#choiceOverlayCounter").hide();
-		$(".choiceOverlay").hide();
-		$("video").hide();
-
-		// save last overlay & video to resume at video end
-		lastChoiceOverlay = $(".choiceOverlay#choiceOverlay2");
-		lastVideo = $("#video2");
-
-		// show and play video 3 at a certain position (0 seconds)
-		$("#video3").show();
-		video3.play(0);
-
+		// show overlay 2
+		showOverlay(2);
 	});
 
 
@@ -293,7 +185,6 @@ $(document).ready( function() {
 
 	/***************************************
 	* Example 5: Decision Overlay
-	* (WITHOUT Timeout)
 	***************************************/
 
 	// Pause video 3 at 4 seconds and show decision overlay
@@ -301,51 +192,8 @@ $(document).ready( function() {
 		
 		video3.pause();
 
-		$(".choiceOverlay#choiceOverlay3").show();
-
-	});
-
-	// What should happen when a choice is made?
-	// ( #choiceOverlay1 and .action1 refer to the respective IDs and classes in index.html )
-	$(".choiceOverlay#choiceOverlay3 .action1").click(function() {
-		
-		// stop timeout, as something was chosen
-		window.clearInterval(choiceTimeout);
-		
-		// hide counter, overlays & videos
-		$("#choiceOverlayCounter").hide();
-		$(".choiceOverlay").hide();
-		$("video").hide();
-
-		// save last overlay & video to resume at video end
-		lastChoiceOverlay = $(".choiceOverlay#choiceOverlay3");
-		lastVideo = $("#video3");
-
-		// show and play video 1 at a certain position (0 seconds)
-		$("#video1").show();
-		video1.play(0);
-
-	});
-
-	// Example for different choice
-	$(".choiceOverlay#choiceOverlay3 .action2").click(function() {
-		
-		// stop timeout, as something was chosen
-		window.clearInterval(choiceTimeout);
-		
-		// hide counter, overlays & videos
-		$("#choiceOverlayCounter").hide();
-		$(".choiceOverlay").hide();
-		$("video").hide();
-
-		// save last overlay & video to resume at video end
-		lastChoiceOverlay = $(".choiceOverlay#choiceOverlay3");
-		lastVideo = $("#video3");
-
-		// show and play video 2 at a certain position (0 seconds)
-		$("#video2").show();
-		video2.play(0);
-
+		// show overlay 3
+		showOverlay(3)
 	});
 
 }); // document ready
