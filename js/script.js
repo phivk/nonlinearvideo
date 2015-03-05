@@ -81,7 +81,7 @@ $(document).ready( function() {
 	***************************************/
 
 	// Pause video 1 at 5 seconds and show decision overlay
-	video1.cue(5, function() {
+	video1.cue(2, function() {
 		
 		video1.pause();
 
@@ -172,7 +172,7 @@ $(document).ready( function() {
 	video1.webpage({
 		id: "test1",
 		start: 10,
-		end: 14,
+		end: 16,
 		src: "http://example.com/",
 		target: "exampleWebsite1"
 	});
@@ -207,7 +207,7 @@ $(document).ready( function() {
 	***************************************/
 
 	// Pause video 2 at 12 seconds and show decision overlay
-	video2.cue(12, function() {
+	video2.cue(2, function() {
 		
 		video2.pause();
 
