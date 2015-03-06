@@ -2,10 +2,11 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>HTML5 Non-linear Video Template</title>
-		
+		<title>CYOA all the way</title>		
+
+		<!-- load stylesheet -->
 		<link rel="stylesheet" href="./css/style.css">
-		
+
 	</head>
 	<body>
 		<h1>Creating Non-Linear Video in HTML5</h1>
@@ -32,6 +33,14 @@
 				
 			</div>
 
+			<div id="overlayWrapper">
+				<!-- Container for other overlays (ie. websites), that are shown at a certain point of time.
+				The point of time is defined in /js/script.js refers to the id of the element (z.B. "#exampleWebsite1"). Position and size are defined in /css/style.css -->
+				<div class="otherOverlay" id="exampleWebsite1"></div>
+				<div class="otherOverlay" id="exampleWebsite2"></div>
+
+			</div>
+
 			<!-- container that will hold a time-coded footnote -->
 			<div id="footnotediv"></div>
 
@@ -54,25 +63,15 @@
 			<!-- Counter for Decision-Overlays -->
 			<div id="choiceOverlayCounter"></div>
 
-			<div id="overlayWrapper">
-				<!-- Container for other overlays (ie. websites), that are shown at a certain point of time.
-				The point of time is defined in /js/script.js refers to the id of the element (z.B. "#exampleWebsite1"). Position and size are defined in /css/style.css -->
-				<div class="otherOverlay" id="exampleWebsite1"></div>
-				<div class="otherOverlay" id="exampleWebsite2"></div>
-
-			</div>
-
-			<p>Based on <a href="http://filmicweb.org/hypervideo-web/create-non-linear-video-html5/">"How to create non-linear video in HTML5"</a> by <a href="https://twitter.com/openhypervideo">Joscha Jaeger</a></p>
 		</div> <!-- /content -->
-        
+
 		<!-- load assets at end of body for performance -->
 		<!-- load popcorn-complete.js which includes plugins like popcorn.webpage.js -->
 		<script type="text/javascript" src="js/popcorn-complete-min.js"></script>
 		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
 
 		<!-- Script, that coordinates timebased events -->
-		<script type="text/javascript" src="js/script.js"></script>
+		<script type="text/javascript" src="js/script06.js"></script>
+
 	</body>
-	
-		
 </html>

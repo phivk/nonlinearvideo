@@ -16,7 +16,7 @@ $(document).ready( function() {
 	var video3 = Popcorn('#video3');
 	var videos = [video1, video2, video3];
 
-	// show first video
+	// show startvideo
 	$("#video1").show();
 
 	// at the end of each video, resume to the last decision overlay
@@ -35,7 +35,6 @@ $(document).ready( function() {
 			$("#overlayWrapper").show();
 		});
 	});
-
 
 	/*************************************************************************
 	* (TIMEBASED) EVENTS FOR VIDEO 1
@@ -83,60 +82,6 @@ $(document).ready( function() {
 
 		// show overlay 1
 		showOverlay(1);
-	});
-
-
-	/*************************************************************************
-	* (TIMEBASED) EVENTS FOR VIDEO 2
-	*************************************************************************/
-
-	/***************************************
-	* Example 3: Show Webpage
-	* (start, end), look at
-	* http://popcornjs.org/popcorn-docs/plugins/#Webpage
-	***************************************/
-
-	// From second 4 to 8 in video 2, show website
-	// "exampleWebsite2" is the element id, in which the website should be shown,
-	// in our case a DIV, that is position:absolute on top of the video (see style.css)
-	video2.webpage({
-		id: "test1",
-		start: 6,
-		end: 8,
-		src: "http://example.com",
-		target: "exampleWebsite2"
-	});
-
-	/***************************************
-	* Example 4: Decision Overlay
-	* (with Timeout and background image)
-	***************************************/
-
-	// Pause video 2 at 12 seconds and show decision overlay
-	video2.cue(12, function() {
-		
-		video2.pause();
-
-		// show overlay 2
-		showOverlay(2);
-	});
-
-
-	/*************************************************************************
-	* (TIMEBASED) EVENTS FOR VIDEO 3
-	*************************************************************************/
-
-	/***************************************
-	* Example 5: Decision Overlay
-	***************************************/
-
-	// Pause video 3 at 4 seconds and show decision overlay
-	video3.cue(4, function() {
-		
-		video3.pause();
-
-		// show overlay 3
-		showOverlay(3)
 	});
 
 	/***************************************
@@ -215,5 +160,4 @@ $(document).ready( function() {
 		$("#video"+videoNumber).show();
 		videos[videoNumber-1].play(0);
 	}
-
 }); // document ready

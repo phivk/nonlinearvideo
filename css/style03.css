@@ -1,0 +1,35 @@
+/***************************************
+* GENERIC DEFINITIONS
+***************************************/
+
+body {
+	font-family: Verdana, non-serif;
+}
+
+#content {
+	width: 800px;
+	height: 600px;
+	background: #efefef;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -400px;
+	margin-top: -300px;
+}
+
+#content h1 {
+	text-align: center;
+}
+
+#content #mainVideoWrapper {
+	width: 100%;
+	height: 100%;
+	background: #222;
+}
+
+#content #mainVideoWrapper video {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: none;
+}

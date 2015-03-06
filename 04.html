@@ -2,12 +2,13 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>HTML5 Non-linear Video Template</title>
+		<title>Now with Popcorn.js</title>
 		
 		<link rel="stylesheet" href="./css/style.css">
 		
 	</head>
 	<body>
+
 		<h1>Creating Non-Linear Video in HTML5</h1>
 		<div id="content">
 
@@ -32,28 +33,6 @@
 				
 			</div>
 
-			<!-- container that will hold a time-coded footnote -->
-			<div id="footnotediv"></div>
-
-			<!-- Decision-Overlays, that lay on top of the videos and are shown at certain points of time. -->
-			<div class="choiceOverlay" id="choiceOverlay1">
-				<div class="action green">Play Video 2 (Green)</div>
-				<div class="action blue">Play Video 3 (Blue)</div>
-			</div>
-
-			<div class="choiceOverlay" id="choiceOverlay2">
-				<div class="action red">Play Video 1 (Red)</div>
-				<div class="action blue">Play Video 3 (Blue)</div>
-			</div>
-
-			<div class="choiceOverlay" id="choiceOverlay3">
-				<div class="action red">Play Video 1 (Red)</div>
-				<div class="action green">Play Video 2 (Green)</div>
-			</div>
-
-			<!-- Counter for Decision-Overlays -->
-			<div id="choiceOverlayCounter"></div>
-
 			<div id="overlayWrapper">
 				<!-- Container for other overlays (ie. websites), that are shown at a certain point of time.
 				The point of time is defined in /js/script.js refers to the id of the element (z.B. "#exampleWebsite1"). Position and size are defined in /css/style.css -->
@@ -62,7 +41,9 @@
 
 			</div>
 
-			<p>Based on <a href="http://filmicweb.org/hypervideo-web/create-non-linear-video-html5/">"How to create non-linear video in HTML5"</a> by <a href="https://twitter.com/openhypervideo">Joscha Jaeger</a></p>
+			<!-- container that will hold a time-coded footnote -->
+			<div id="footnotediv"></div>
+
 		</div> <!-- /content -->
         
 		<!-- load assets at end of body for performance -->
@@ -71,7 +52,7 @@
 		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
 
 		<!-- Script, that coordinates timebased events -->
-		<script type="text/javascript" src="js/script.js"></script>
+		<script type="text/javascript" src="js/script04.js"></script>
 	</body>
 	
 		
